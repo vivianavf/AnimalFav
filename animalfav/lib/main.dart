@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'calendario.dart';
+import 'organizador.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: calendarioPage.id,
+      initialRoute: organizadorPage.id,
       routes: {
-        calendarioPage.id: (context) => calendarioPage(),
+        organizadorPage.id: (context) => organizadorPage(),
       },
     );
   }
