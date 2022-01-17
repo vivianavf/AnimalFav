@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'organizador.dart';
+import 'menu.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: organizadorPage.id,
+      initialRoute: menuPage.id,
       routes: {
-        organizadorPage.id: (context) => organizadorPage(),
+        menuPage.id: (context) => menuPage(),
       },
     );
   }

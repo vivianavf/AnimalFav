@@ -33,6 +33,7 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <div id="map"></div>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
@@ -100,5 +101,9 @@
       loadMainDartJs();
     }
   </script>
+  <script src="geolocalizacion.js" defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+  <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+  <script src="correos.js" defer></script>
 </body>
 </html>
