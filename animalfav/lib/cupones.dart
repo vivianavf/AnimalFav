@@ -1,5 +1,4 @@
 //paquetes necesarios para conectarme a la base de datos
-// por ahora se hace con un archivo json
 import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
@@ -22,6 +21,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
+Future<Persona> fetchPost() async{
+  final responde = await http.get("");
+  if(responde.statusCode==200){
+    return Cupon.fromJson(json.decode(response.body));
+  }else{
+    throw Exception("Fallo de conexion");
+  }
+}
+
+//clase cupon con sus atributos
 class Cupon{
   final String nombre;
   //final String local;
@@ -30,6 +39,8 @@ class Cupon{
   //final String codigo;
   
   Cupon({this.nombre});
+
+  //Transforma de JSon a objeto cupon
   factory Cupon.fromJson(Map<String, dynamic> json){
     return Cupon(
       nombre: json["Cupones"][1]["Nombre"]
