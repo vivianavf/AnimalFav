@@ -1,0 +1,45 @@
+{
+    "Cupones":[
+        {
+            "Nombre": "Productos para el cuidado de animales Mascotas Felices",
+            "Local válido": "City Pet Urdesa, Riocentro Sur",
+            "Fecha de caducidad": "28/03/2022",
+            "Beneficios": "20% de descuento en cepillos para pelaje",
+            "Codigo": "CITYPT20",
+            "Categoría": "limpieza"
+        },
+        {
+            "Nombre": "Descuento en tu primer pedido en CityPet",
+            "Local válido": "City Pet Mall del Sol",
+            "Fecha de caducidad": "15/04/2022",
+            "Beneficios": "15% de descuento en tu primer pedido en CityPet Mall del Sol*. *Debe ser cliente por primera vez.",
+            "Codigo": "CITYPT15",
+            "Categoría": "accesorios"
+        },
+        {
+            "Nombre": "Cupón de descuento en la marca LittlePet",
+            "Local válido": "Pet's Planet Guayaquil",
+            "Fecha de caducidad": "16/04/2022",
+            "Beneficios": "Cupón de 10% de descuento en cualquier producto de la marca Lillydoo",
+            "Codigo": "LITTLE10",
+            "Categoría": "accesorios"
+        },
+        {
+            "Nombre": "Cupón de descuento en la marca Gatuco",
+            "Local válido": "Papoche's Pet Guayaquil",
+            "Fecha de caducidad": "22/04/2022",
+            "Beneficios": "Cupón de 5% de descuento en comida húmeda de la marca",
+            "Codigo": "GATUCO05",
+            "Categoría": "comida"
+        },
+        {
+            "Nombre": "Código promocional PetClinic",
+            "Local válido": "Pet Crush Guayaquil",
+            "Fecha de caducidad": "22/04/2022",
+            "Beneficios": "Por la compra de una cama ExtraGrande en cualquier local de PetCrush llévate un 10% en tu siguiente consulta en PetClinic.",
+            "Codigo": "PETCLINC22",
+            "Categoría": "camas"
+        }
+
+    ]
+}

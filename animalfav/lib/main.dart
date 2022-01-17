@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      )
       initialRoute: organizadorPage.id,
       routes: {
         organizadorPage.id: (context) => organizadorPage(),
