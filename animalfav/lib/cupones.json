@@ -1,5 +1,4 @@
-{
-    "Cupones":[
+[
         {
             "Nombre": "Productos para el cuidado de animales Mascotas Felices",
             "Local válido": "City Pet Urdesa, Riocentro Sur",
@@ -41,5 +40,4 @@
             "Categoría": "camas"
         }
 
-    ]
-}
+]
