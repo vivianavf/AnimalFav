@@ -4,19 +4,18 @@
 import 'package:animalfav/cuponResources/category.dart';
 import 'package:animalfav/cuponResources/cuponDetail.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 //ventanas
 import 'cuponResources/cuponPrincipal.dart';
-//import 'menu.dart';
+import 'eventos.dart';
 
-void main(){
+void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "My Pet App",
@@ -29,14 +28,14 @@ class MyApp extends StatelessWidget{
 }
 
 // ************ Home Screen **************
-class HomeScreen extends StatefulWidget{
+class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>{
+class _HomeScreenState extends State<HomeScreen> {
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     //obtener el tamaño de la ventana
     var size = MediaQuery.of(context).size;
 
@@ -49,18 +48,16 @@ class _HomeScreenState extends State<HomeScreen>{
     return Scaffold(
       body: Stack(
         children: <Widget>[
-
           //imagen header
-           Container(
-             height: size.height*.3,
-             decoration: BoxDecoration(
-               image: DecorationImage(
-                 alignment: Alignment.topCenter,
-                 image: AssetImage('assets/images/top_header.png')
-               ),
-             ),
-           ),
-        
+          Container(
+            height: size.height * .3,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  alignment: Alignment.topCenter,
+                  image: AssetImage('assets/images/top_header.png')),
+            ),
+          ),
+
           //botones para ir a las otras ventanas
           SafeArea(
             child: Padding(
@@ -74,73 +71,75 @@ class _HomeScreenState extends State<HomeScreen>{
                       primary: false,
                       crossAxisCount: 2,
                       children: <Widget>[
-
                         //Botón que manda a Cupones
 
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             Navigator.push(
+<<<<<<< HEAD
                               context, 
                               MaterialPageRoute(builder: (context) => CategoryListPage()),
+=======
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CuponPage()),
+>>>>>>> 98ae6a3d5264ace839f9bc0b0cc46e3fb929ece7
                             );
                           },
                           child: Card(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8)
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8)),
+                            elevation: 4,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Image.network(
+                                  'https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-coupon-black-friday-justicon-lineal-color-justicon.png',
+                                  height: 128,
+                                ),
+                                Text(
+                                  'Cupones',
+                                  style: cardTextStyle,
+                                )
+                              ],
+                            ),
                           ),
-                          elevation: 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Image.network(
-                                'https://img.icons8.com/external-justicon-lineal-color-justicon/64/000000/external-coupon-black-friday-justicon-lineal-color-justicon.png',
-                                height: 128,
-                              ),
-                              Text(
-                                'Cupones',
-                                style: cardTextStyle,
-                              )
-                            ],
-                          ),
-                        ),
                         ),
 
                         //Botón que manda a Correos
 
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             Navigator.push(
-                              context, 
+                              context,
 
                               //reemplazar CuponPage() por la ventana de correos
 
-                              MaterialPageRoute(builder: (context) => CuponPage()),
+                              MaterialPageRoute(
+                                  builder: (context) => eventosPage()),
                             );
                           },
                           child: Card(
-                          shape:RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8)
-                          ),
-                          elevation: 4,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Image.network(
-                                
-                                // url de imagen de internet
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8)),
+                            elevation: 4,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Image.network(
+                                  // url de imagen de internet
 
-                                'https://img.icons8.com/fluency/48/000000/mail.png',
-                                height: 128,
-                              ),
-                              Text(
-                                'Correo',
-                                style: cardTextStyle,
-                              )
-                            ],
+                                  'https://cdn-icons-png.flaticon.com/512/45/45533.png',
+                                  height: 128,
+                                ),
+                                Text(
+                                  'Organizar Eventos',
+                                  style: cardTextStyle,
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                        ),
-
                       ],
                     ),
                   ),
@@ -151,7 +150,5 @@ class _HomeScreenState extends State<HomeScreen>{
         ],
       ),
     );
-
-
   }
 }
