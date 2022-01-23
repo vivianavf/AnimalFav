@@ -68,7 +68,7 @@ flutter:
   assets:
     - data/cupones.json
     - assets/images/top_header.png
-
+    - assets/images/calendario.png
   fonts:
     - family: Monserrat Regular
       fonts:
