@@ -16,6 +16,13 @@ class _CuponPageState extends State<CuponPage>{
   @override
   Widget build(BuildContext context){
     return Scaffold(
+      appBar: AppBar(
+        leading: BackButton(),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(16))),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+      ),
       body: FutureBuilder(
         future: ReadJsonData(),
         builder: (context, data){
@@ -54,10 +61,10 @@ class _CuponPageState extends State<CuponPage>{
                                 fontWeight: FontWeight.bold
                               ),),),
                               Padding(padding: EdgeInsets.only(left: 8, right: 8), child: Text(items[index].local.toString()),),
-                              Padding(padding: EdgeInsets.only(left: 8, right: 8), child: Text(items[index].fecha.toString()),),
+                              //Padding(padding: EdgeInsets.only(left: 8, right: 8), child: Text(items[index].fecha.toString()),),
                               Padding(padding: EdgeInsets.only(left: 8, right: 8), child: Text(items[index].beneficio.toString()),),
-                              Padding(padding: EdgeInsets.only(left: 8, right: 8), child: Text(items[index].codigo.toString()),),
-                              Padding(padding: EdgeInsets.only(left: 8, right: 8), child: Text(items[index].categoria.toString()),),
+                              //Padding(padding: EdgeInsets.only(left: 8, right: 8), child: Text(items[index].codigo.toString()),),
+                              //Padding(padding: EdgeInsets.only(left: 8, right: 8), child: Text(items[index].categoria.toString()),),
                             ],
                           ),
                         )

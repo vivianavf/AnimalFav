@@ -11,18 +11,23 @@ class cuponDetail extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(title: Text(cupon.nombre),),
+      appBar: AppBar(        
+        leading: BackButton(),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(bottom: Radius.circular(16))),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text('Aprovecha la promoción!'),
+          Text('¡Raspa para copiar el código!'),
           Text(cupon.local),
           Text(cupon.beneficio),
-          Text(cupon.fecha),
-          Text(cupon.codigo),
-          Text(cupon.categoria),
+          Text('Válido hasta: '+cupon.fecha),
           Scratcher(
-            brushSize: 40,
+            brushSize: 70,
             color: Colors.blueGrey,
             child: Container(
               width: 200,

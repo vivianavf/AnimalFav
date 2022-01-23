@@ -1,6 +1,7 @@
 //Ventana principal de la app
 
 //recursos
+import 'package:animalfav/cuponResources/category.dart';
 import 'package:animalfav/cuponResources/cuponDetail.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -80,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen>{
                           onTap: (){
                             Navigator.push(
                               context, 
-                              MaterialPageRoute(builder: (context) => CuponPage()),
+                              MaterialPageRoute(builder: (context) => CategoryListPage()),
                             );
                           },
                           child: Card(
