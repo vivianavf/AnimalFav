@@ -127,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: 128,
                                 ),
                                 Text(
-                                  'Correo',
+                                  'Organizar Eventos',
                                   style: cardTextStyle,
                                 )
                               ],

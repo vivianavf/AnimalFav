@@ -31,6 +31,10 @@ class _eventosPageState extends State<eventosPage> {
           SizedBox(
             height: 15.0,
           ),
+          nombreTextField(),
+          SizedBox(
+            height: 15.0,
+          ),
           bottonCrearEvento(),
           SizedBox(
             height: 15.0,
@@ -48,11 +52,22 @@ class _eventosPageState extends State<eventosPage> {
             padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 15.0),
             child: Text('Organizar un Evento'),
           ),
-          onPressed: () {
-            formularioEvento();
-          });
+          onPressed: () {});
     });
   }
 
   void formularioEvento() {}
+
+  Widget nombreTextField() {
+    return StreamBuilder(builder: (BuildContext context, AsyncSnapShot) {
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 20.0),
+        child: TextField(
+          decoration: InputDecoration(hintText: 'nombre del evento'),
+          onChanged: (text) {},
+          controller: nombreController,
+        ),
+      );
+    });
+  }
 }
