@@ -139,6 +139,10 @@ class CategoryCard extends StatelessWidget{
               child: Container(
                 height: 120,
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20)
+                  ),
                   gradient: LinearGradient(
                     begin: Alignment.bottomCenter,
                     end: Alignment.topCenter,
@@ -185,6 +189,13 @@ class SelectedCategoryPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: BackButton(),
+        shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(16))),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
       body: Container(
         child: Text('a'),
       )

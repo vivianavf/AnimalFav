@@ -1,3 +1,4 @@
+import 'package:animalfav/cuponResources/cuponPrincipal.dart';
 import 'package:flutter/material.dart';
 
 
@@ -28,9 +29,9 @@ class CategoryListPage extends StatelessWidget{
       appBar: AppBar(
         leading: BackButton(),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(bottom: Radius.circular(16))),
-          backgroundColor: Colors.transparent,
-          elevation: 0,
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(16))),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
       body: Container(
         child: Column(
@@ -54,7 +55,7 @@ class CategoryListPage extends StatelessWidget{
                       Navigator.push(
                         context, 
                         MaterialPageRoute(
-                          builder: (context) => SelectedCategoryPage()),
+                          builder: (context) => CuponPage()),
                         );
                     },
                   );
@@ -67,3 +68,4 @@ class CategoryListPage extends StatelessWidget{
     );
   }
 }
+
