@@ -1,0 +1,29 @@
+{
+  "name": "animalfav",
+  "version": "1.0.0",
+  "description": "Una app móvil para planificar eventos de mascotas y obtener cupones de tiendas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivianavf/AnimalFav.git"
+  },
+  "keywords": [],
+  "author": "Viviana VEra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vivianavf/AnimalFav/issues"
+  },
+  "homepage": "https://github.com/vivianavf/AnimalFav#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.1.8",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
