@@ -188,7 +188,7 @@ class _eventosPageState extends State<eventosPage> {
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.of(context).pop();
-                EventoGuardado();
+                _EventoGuardado(context);
                 _showToast(context, "Evento Guardado");
               }),
           FlatButton(
@@ -211,7 +211,7 @@ class _eventosPageState extends State<eventosPage> {
     );
   }
 
-  Widget _EventoText(BuildContext context) {
+  Widget _EventoText() {
     return StreamBuilder(builder: (BuildContext context, AsyncSnapShot) {
       return Column(
         children: [
@@ -226,7 +226,10 @@ class _eventosPageState extends State<eventosPage> {
     });
   }
 
-  void EventoGuardado() {
-    _EventoText(context);
+  void _EventoGuardado(BuildContext context) {
+    context:
+    context;
+    builder:
+    (_) => _EventoText();
   }
 }
