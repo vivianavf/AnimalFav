@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:js' as js;
 
@@ -19,7 +20,7 @@ class _eventosPageState extends State<eventosPage> {
   String Ubicacion = '';
   TextEditingController nombreController = TextEditingController();
   TextEditingController fechaInicioController = TextEditingController();
-  TextEditingController horaFinalFController = TextEditingController();
+  TextEditingController horaFinalController = TextEditingController();
   TextEditingController horaInicioController = TextEditingController();
   TextEditingController fechaFinalController = TextEditingController();
   TextEditingController UbicacionController = TextEditingController();
@@ -30,7 +31,8 @@ class _eventosPageState extends State<eventosPage> {
           child: Column(
         children: [
           Image.asset(
-            'assets/images/calendario.png',height: 100.0,
+            'assets/images/calendario.png',
+            height: 100.0,
           ),
           SizedBox(
             height: 15.0,
@@ -63,6 +65,7 @@ class _eventosPageState extends State<eventosPage> {
           SizedBox(
             height: 15.0,
           ),
+          Text("Eventos Guardados"),
         ],
       )),
     );
@@ -77,34 +80,32 @@ class _eventosPageState extends State<eventosPage> {
             child: Text('Organizar un Evento'),
           ),
           onPressed: () {
-            AlertDialog(
-              title: Text('Evento guardado'),
-              content: SingleChildScrollView(
-                child: ListBody(
-                  children: [Text('Evento guardado')],
-                ),
-              ),
-              actions: <Widget>[
-                TextButton(
-                  child: Text('Ok'),
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                )
-              ],
-            );
+            if (nombreController.text == "" ||
+                fechaInicioController.text == "" ||
+                fechaFinalController.text == "" ||
+                horaInicioController.text == "" ||
+                fechaFinalController.text == "") {
+              _showToast(context, "Datos en Blanco");
+            } else {
+              _confirmacionEvento(context);
+            }
           });
     });
   }
 
-  void formularioEvento() {}
+  Future<void> _confirmacionEvento(BuildContext context) async {
+    return showCupertinoDialog<void>(
+      context: context,
+      builder: (_) => _buildAlertDialog(),
+    );
+  }
 
   Widget nombreTextField() {
     return StreamBuilder(builder: (BuildContext context, AsyncSnapShot) {
       return Container(
         padding: EdgeInsets.symmetric(horizontal: 20.0),
         child: TextField(
-          decoration: InputDecoration(hintText: 'Nombre del evento'),
+          decoration: InputDecoration(hintText: 'nombre del evento'),
           onChanged: (text) {},
           controller: nombreController,
         ),
@@ -158,7 +159,7 @@ class _eventosPageState extends State<eventosPage> {
         child: TextField(
           decoration: InputDecoration(hintText: 'Hora final'),
           onChanged: (text) {},
-          controller: horaFinalFController,
+          controller: horaFinalController,
         ),
       );
     });
@@ -175,5 +176,57 @@ class _eventosPageState extends State<eventosPage> {
         ),
       );
     });
+  }
+
+  Widget _buildAlertDialog() {
+    return AlertDialog(
+        title: Text('Guardar Evento'),
+        content: Text("Desea guardar el evento actual?"),
+        actions: <Widget>[
+          FlatButton(
+              child: Text("Aceptar"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.of(context).pop();
+                EventoGuardado();
+                _showToast(context, "Evento Guardado");
+              }),
+          FlatButton(
+              child: Text("Cancelar"),
+              textColor: Colors.red,
+              onPressed: () {
+                Navigator.of(context).pop();
+              }),
+        ]);
+  }
+
+  void _showToast(BuildContext context, String message) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(
+      SnackBar(
+        content: Text(message),
+        action: SnackBarAction(
+            label: 'Ocultar', onPressed: scaffold.hideCurrentSnackBar),
+      ),
+    );
+  }
+
+  Widget _EventoText(BuildContext context) {
+    return StreamBuilder(builder: (BuildContext context, AsyncSnapShot) {
+      return Column(
+        children: [
+          Text("Nombre del evento: " + nombreController.text),
+          Text("Ubicacion: " + UbicacionController.text),
+          Text("Hora de Inicio: " + horaInicioController.text),
+          Text("Hora Final: " + horaFinalController.text),
+          Text("Fecha de Inicio: " + fechaInicioController.text),
+          Text("Fecha Final: " + fechaFinalController.text)
+        ],
+      );
+    });
+  }
+
+  void EventoGuardado() {
+    _EventoText(context);
   }
 }
