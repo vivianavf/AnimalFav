@@ -1,4 +1,7 @@
-import 'package:animalfav/cuponResources/cuponPrincipal.dart';
+//ventana que muestra las categorias
+//list
+
+import 'package:animalfav/pages/cuponPrincipal.dart';
 import 'package:flutter/material.dart';
 
 
@@ -10,9 +13,8 @@ class Category{
     late String icon;
     late Color color;
     late String imgName;
-    late List<Category> subCategories;
-    
-    Category({required this.name, required this.icon, required this.color, required this.imgName, required this.subCategories});
+
+    Category({required this.name, required this.icon, required this.color, required this.imgName,});
 }
 
 class CategoryListPage extends StatelessWidget{
@@ -23,7 +25,7 @@ class CategoryListPage extends StatelessWidget{
         color: Color.fromRGBO(63, 63, 63, 1));
 
   @override
-  Widget build(BuildContext context){
+Widget build(BuildContext context){
     return Scaffold(
       //drawer: Drawer(),
       appBar: AppBar(
@@ -38,7 +40,7 @@ class CategoryListPage extends StatelessWidget{
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 10, bottom: 10),
+              padding: const EdgeInsets.only(top: 5, bottom: 5),
               child: Text('Seleccione una categoría',
                     textAlign: TextAlign.center,
                     style: cardTextStyle,
@@ -55,7 +57,8 @@ class CategoryListPage extends StatelessWidget{
                       Navigator.push(
                         context, 
                         MaterialPageRoute(
-                          builder: (context) => CuponPage()),
+                          builder: (context) => CuponPage()
+                          ),
                         );
                     },
                   );
@@ -67,5 +70,7 @@ class CategoryListPage extends StatelessWidget{
       )
     );
   }
+
+
 }
 

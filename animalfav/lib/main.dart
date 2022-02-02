@@ -1,12 +1,12 @@
 //Ventana principal de la app
 
 //recursos
-import 'package:animalfav/cuponResources/category.dart';
-import 'package:animalfav/cuponResources/cuponDetail.dart';
+import 'package:animalfav/model/category.dart';
+import 'package:animalfav/pages/cuponDetail.dart';
 import 'package:flutter/material.dart';
 
 //ventanas
-import 'cuponResources/cuponPrincipal.dart';
+import 'pages/cuponPrincipal.dart';
 import 'eventos.dart';
 
 void main() {

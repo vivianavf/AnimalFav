@@ -104,7 +104,7 @@ class _eventosPageState extends State<eventosPage> {
       return Container(
         padding: EdgeInsets.symmetric(horizontal: 20.0),
         child: TextField(
-          decoration: InputDecoration(hintText: 'nombre del evento'),
+          decoration: InputDecoration(hintText: 'Nombre del evento'),
           onChanged: (text) {},
           controller: nombreController,
         ),

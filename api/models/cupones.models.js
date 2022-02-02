@@ -9,7 +9,6 @@ const cupon = mongoose.model(
         cuponBeneficio: String,
         cuponCodigo: String,
         cuponCategoria: String,
-        cuponImage: String
     },{
         timestamps : true,
     })

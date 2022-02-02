@@ -1,3 +1,5 @@
+//widgets para mostrar en la pagina
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -13,28 +15,28 @@ class Utils{
         name: "Accesorios",
         imgName: "accesorios.jpg",
         icon: IconFontHelper.ACCESORIOS,
-        subCategories: []
+        
       ),
       Category(
         color: AppColors.CAMAS,
         name: "Camas",
         imgName: "camas.jpg",
         icon: IconFontHelper.CAMAS,
-        subCategories: []
+        
       ),
       Category(
         color: AppColors.COMIDA,
         name: "Comida",
         imgName: "comida.jpg",
         icon: IconFontHelper.COMIDA,
-        subCategories: []
+        
       ),
       Category(
         color: AppColors.LIMPIEZA,
         name: "Limpieza",
         imgName: "limpieza.jpg",
         icon: IconFontHelper.LIMPIEZA,
-        subCategories: []
+        
       ),
     ];
   }

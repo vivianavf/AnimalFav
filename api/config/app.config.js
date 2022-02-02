@@ -1,5 +1,5 @@
  const MONGO_DB_CONFIG = {
-     DB: "mongodb://localhost/app"
+     DB: "mongodb://localhost/pet-app"
  };
 
  module.exports = {

@@ -10,8 +10,8 @@ async function createcupones(params, callback){
         );
     }
 
-    const cuponModel = new cupon(params);
-    cuponModel
+    const Cupon = new cupon(params);
+    Cupon
     .save()
     .then((response) => {
         return callback(null, response);
@@ -39,55 +39,9 @@ async function getcupones(params, callback){
     });
 }
 
-async function getcuponById(params, callback){
-    const cuponId = params.cuponId;
-    
-    cupon
-    .findById(cuponId)
-    .then((response) => {
-    if(!response) callback("No encontramos :(");
-    else
-        return callback(null, response);
-    })
-    .catch((error) => {
-        return callback(error);
-    });
-}
 
-async function updatecupon(params, callback){
-    const cuponId = params.cuponId;
-    
-    cupon
-    .findByIdAndUpdate(cuponId, params, {useFindAndModify: false})
-    .then((response) => {
-    if(!response) callback("No se puede hacer el update");
-    else
-        return callback(null, response);
-    })
-    .catch((error) => {
-        return callback(error);
-    });
-}
-
-async function deletecupon(params, callback){
-    const cuponId = params.cuponId;
-    
-    cupon
-    .findByIdAndRemove(cuponId)
-    .then((response) => {
-    if(!response) callback("No se puede eliminar :( ");
-    else
-        return callback(null, response);
-    })
-    .catch((error) => {
-        return callback(error);
-    });
-}
 
 module.exports = {
     createcupones,
     getcupones,
-    getcuponById,
-    updatecupon,
-    deletecupon
 }
